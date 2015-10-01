@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+    <!-- Master -->
+    <definition name="master.page" template="/main/template/master.jsp">
+        <put-attribute name="header" value="/main/template/header.jsp"/>
+        <put-attribute name="menu" value="/main/template/menu.jsp"/>
+        <!--<put-attribute name="footer" value="/main/template/footer.jsp"/>-->
+    </definition>
+
+    <definition name="login" template="/page/login.jsp">
+    </definition>
+
+    <definition name="welcomePage"  extends="master.page">
+        <put-attribute name="body" value="/page/home.jsp" />
+    </definition>
+
+    <definition name="menu.main" template="/page/menu/menuMain.jsp" > </definition>
+    <definition name="menu.manage" template="/page/menu/menuManage.jsp" ></definition>
+
+    <definition name="user.main" template="/page/user/userMain.jsp" ></definition>
+    <definition name="user.manage" template="/page/user/userManage.jsp" ></definition>
+
+    <definition name="warehouse.main" template="/page/warehouse/warehouseMain.jsp" ></definition>
+    <definition name="warehouse.manage" template="/page/warehouse/warehouseManage.jsp" ></definition>
+    <definition name="warehouse.product.main" template="/page/warehouse/warehouseProductMain.jsp" ></definition>
+    <definition name="warehouse.product.manage" template="/page/warehouse/warehouseProductManage.jsp" ></definition>
+    <definition name="warehouse.product.manage.findOne" template="/page/warehouse/warehouseProductManageFindOne.jsp" ></definition>
+
+    <definition name="roleUser.main" template="/page/roleUser/roleUserMain.jsp" ></definition>
+
+    <definition name="unit.main" template="/page/unit/unitMain.jsp" ></definition>
+    <definition name="unit.manage" template="/page/unit/unitManage.jsp" ></definition>
+
+    <definition name="brand.main" template="/page/brand/brandMain.jsp" ></definition>
+    <definition name="brand.manage" template="/page/brand/brandManage.jsp" ></definition>
+
+    <definition name="catagory.main" template="/page/catagory/catagoryMain.jsp" ></definition>
+    <definition name="catagory.manage" template="/page/catagory/catagoryManage.jsp" ></definition>
+
+    <definition name="commonData.main" template="/page/commonData/commonDataMain.jsp" ></definition>
+    <definition name="commonData.manage" template="/page/commonData/commonDataManage.jsp" ></definition>
+
+    <definition name="customer.main" template="/page/customer/customerMain.jsp" ></definition>
+    <definition name="customer.manage" template="/page/customer/customerManage.jsp" ></definition>
+
+    <definition name="product.main" template="/page/product/productMain.jsp" ></definition>
+    <definition name="product.manage" template="/page/product/productManage.jsp" ></definition>
+
+    <definition name="supplier.main" template="/page/supplier/supplierMain.jsp" ></definition>
+    <definition name="supplier.manage" template="/page/supplier/supplierManage.jsp" ></definition>
+    <definition name="supplier.view" template="/page/supplier/supplierView.jsp" ></definition>
+
+    <definition name="purchaseOrder.main" template="/page/purchaseOrder/purchaseOrderMain.jsp" ></definition>
+    <definition name="purchaseOrder.manage" template="/page/purchaseOrder/purchaseOrderManage.jsp" ></definition>
+    <definition name="purchaseOrder.product.view" template="/page/purchaseOrder/purchaseOrderProductView.jsp" ></definition>
+
+    <definition name="recieptOrder.main" template="/page/recieptOrder/recieptOrderMain.jsp" ></definition>
+    <definition name="recieptOrder.manage" template="/page/recieptOrder/recieptOrderManage.jsp" ></definition>
+    <definition name="recieptOrder.product.view" template="/page/recieptOrder/recieptOrderProductView.jsp" ></definition>
+
+
+</tiles-definitions>

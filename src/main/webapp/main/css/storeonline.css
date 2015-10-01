@@ -1,0 +1,100 @@
+
+.modal-open .modal {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    overflow-y: scroll;
+}
+
+.modal-footer-modify {
+    padding: 10px 0px 0px 0px;
+}
+
+/* alert message alert*/
+.message-alert {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    position: absolute;
+    z-index: 9999;
+    opacity: 1.0;
+    display: none;
+}
+
+/*DATATABLE*/
+/*blue theme*/
+tr.odd {
+    background-color:  #CAE3F7;
+}
+
+tr.even{
+    background-color: #DDF0FF;
+}
+
+
+th.sorting_asc {
+    color: #fff;
+    background-color: #50A4EA;
+}
+
+th.sorting , th.sorting_disabled {
+    color: #fff;
+    background-color: #50A4EA;
+}
+
+th.sorting_desc {
+    color: #fff;
+    background-color: #50A4EA;
+}
+
+
+/*orange theme*/
+.table-bg-orange > tbody > tr.odd {
+    background-color:  #FFF3EB;
+}
+
+.table-bg-orange > tbody > tr.even{
+    background-color: #FAE5D2;
+}
+
+.table-bg-orange > thead > tr > th.sorting_asc {
+    color: #fff;
+    background-color: #FF9934;
+}
+
+.table-bg-orange >  thead > tr > th.sorting, .table-bg-orange >  thead > tr > th.sorting_disabled {
+    color: #fff;
+    background-color: #FF9934;
+}
+
+.table-bg-orange > >thead > tr > th.sorting_desc {
+    color: #fff;
+    background-color: #FF9934;
+}
+
+.modal.modal-wide .modal-dialog {
+      width: 90%;
+}
+
+.modal-wide .modal-body {
+    overflow-y: auto;
+}
+
+.modal.modal-wide-60 .modal-dialog {
+    width: 60%;
+}
+.modal-wide-60 .modal-body {
+    overflow-y: auto;
+}
+
+.modal.modal-wide-40 .modal-dialog {
+    width: 40%;
+}
+
+.modal-wide-40 .modal-body {
+    overflow-y: auto;
+}
+
+
+.datepicker{z-index:1151 !important;}
+
+.numberFormat,.currencyFormat{text-align: right;}
