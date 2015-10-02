@@ -27,7 +27,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">ค้นหา</h3>
                     <div class="box-tools">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" onclick="collapseManager(this);"><i class="fa fa-minus"></i></button>
                     </div>
                 </div>
                 <div class="box-body" style="display: block;">
@@ -72,7 +72,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">ผลการค้นหา</h3>
                     <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse" ><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" onclick="collapseManager(this);"><i class="fa fa-minus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">

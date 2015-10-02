@@ -7,7 +7,7 @@
 <section class="content-header">
 </section>
 
-<%--<div id="tabMain" class="col-md-12" >
+<div id="tabMain" class="col-md-12" >
     <!-- Custom Tabs (Pulled to the right) -->
     <div class="nav-tabs-custom">
         <ul id="pageTab" class="nav nav-tabs ">
@@ -15,7 +15,7 @@
         <div id="pageTabContent" class="tab-content">
         </div><!-- /.tab-content -->
     </div><!-- nav-tabs-custom -->
-</div>--%>
+</div>
 
 
 <section id="content-home" class="content" style="text-align: center;">
@@ -24,7 +24,6 @@
     <a href="#"><b>Store</b>Online</a>
   </div>
 </section>
-
 
 
 

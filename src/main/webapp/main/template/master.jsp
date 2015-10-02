@@ -380,20 +380,20 @@
     }
 
     <%-- -------------------------------------------------------------------------------------------------------- --%>
-    <%-- --------------------------------------- Script Add Tab ------------------------------------------------- --%>
+    <%-- --------------------------------------- Script Add Tab START ------------------------------------------- --%>
     <%-- -------------------------------------------------------------------------------------------------------- --%>
 
-   /* var pageImages = [];
+    var pageImages = [];
     var pageNum = 0;
-    *//**  Reset numbering on tab buttons **//*
+    // Reset numbering on tab buttons
     function reNumberPages() {
         pageNum = 0;
         var tabCount = $('#pageTab > li').length;
         $('#pageTab > li').each(function() {
-            var pageId = $(this).children('a').attr('href');
-            if (pageId == "#page1") {
-                return true;
-            }
+            var pageId = $(this).children('a').attr('href')
+//            if (pageId == "#page1") {
+//                return true;
+//            }
             pageNum++;
             //$(this).children('a').html('Page ' + pageNum + '<button class="close" type="button" ' + 'title="Remove this page">×</button>');
         });
@@ -401,7 +401,6 @@
     }
 
     function checkShowContent(){
-        //alert(pageNum);
         if(pageNum > 0){
             $('#content-home').hide();
             $('#tabMain').show();
@@ -411,11 +410,11 @@
         }
     }
 
-    function addTabMain(icon,tabName,tabContent){
+    function addTabMain(icon,tabName,tabContent,menuId){
         pageNum++;
         checkShowContent();
 
-        var icontag = '<i class="fa ' + icon +' ">';
+        var icontag = '<i class="fa ' + icon +'  " id="icon_'+menuId+'_menu">';
         var buttonCloseTab = '<button class="btn btn-box-tool close-tab" data-widget="remove"><i class="fa fa-times"></i></button>';
 
         $('#pageTab').append( $('<li><a href="#page' + pageNum + '" id="pageHead' + pageNum +'">' +  icontag + ' ' + tabName + ' ' + buttonCloseTab + '</a></li>'));
@@ -424,10 +423,22 @@
         $('#pageHead' + pageNum).trigger("click");
     }
 
+    function checkDuplicateMenu(menuId){
+        var checkDuplicate = false;
+        $('#icon_'+menuId+'_menu').each(function() {
+            var tabId = $(this).parents('li').children('a').attr('href');
+
+            var pageNumber = tabId.substr(5);
+            $('#pageHead' + pageNumber).trigger("click");
+            checkDuplicate = true;
+        });
+        return checkDuplicate;
+    }
+
     $(document).ready(function() {
         reNumberPages();
 
-        *//**  Remove a Tab **//*
+        // Remove a Tab //
         $('#pageTab').on('click', ' li a .close-tab', function() {
             var tabId = $(this).parents('li').children('a').attr('href');
             $(this).parents('li').remove('li');
@@ -436,12 +447,16 @@
             $('#pageTab a:first').tab('show');
         });
 
-        *//**  Click Tab to show its content **//*
+        // Click Tab to show its content //
         $("#pageTab").on("click", "a", function(e) {
             e.preventDefault();
             $(this).tab('show');
         });
-    });*/
+    });
+
+    <%-- -------------------------------------------------------------------------------------------------------- --%>
+    <%-- ------------------------------------ Script Add Tab  END ----------------------------------------------- --%>
+    <%-- -------------------------------------------------------------------------------------------------------- --%>
 
 </script>
 

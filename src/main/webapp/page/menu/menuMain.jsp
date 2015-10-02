@@ -18,7 +18,7 @@
 
         <div class="col-md-3">
 
-            <a href="javascript:$('#manageModal .modal-body').load('<c:url value="/main/menu/manage"/>',function(e){$('#manageModal').modal('show');});"
+            <a href="javascript:$('#manageModal .modal-body').load('<c:url value="/main/menu/manage"/>',function(e){$('#menuManageModal').modal('show');});"
                class="btn btn-primary btn-block margin-bottom">เพิ่มข้อมูลเมนู
             </a>
 
@@ -26,7 +26,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">ค้นหา</h3>
                     <div class="box-tools">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" onclick="collapseManager(this);"><i class="fa fa-minus"></i></button>
                     </div>
                 </div>
                 <div class="box-body" style="display: block;">
@@ -73,7 +73,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">ผลการค้นหา</h3>
                     <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse" ><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" onclick="collapseManager(this);"><i class="fa fa-minus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
@@ -143,7 +143,7 @@
     <%-- -------------------------------------------------------------------------------------------------------- --%>
 
     <%-- ----------------------------------------- Modal Add User------------------------------------------------ --%>
-    <div class="modal fade" id="manageModal" data-backdrop="static" data-keyboard="false" >
+    <div class="modal fade" id="menuManageModal" data-backdrop="static" data-keyboard="false" >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header ">

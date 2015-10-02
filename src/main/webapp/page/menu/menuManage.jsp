@@ -172,7 +172,7 @@
                         showMessageAlert(result.icon,result.header,result.content,result.color);
 
                         closeModal("menuManageModal");
-                        reloadPageOldAjax();
+                        /*reloadPageOldAjax();*/
 
                     },
                     error: function(result){

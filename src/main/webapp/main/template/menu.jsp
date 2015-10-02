@@ -42,6 +42,11 @@
 
   function reloadPageAjaxTab(actionUrl,menuId,icon,tabName) {
       if(actionUrl != "#"){
+
+          if(checkDuplicateMenu(menuId)){
+              return true;
+          }
+
           urlTemp = actionUrl;
           menuIdTem = menuId;
           // get the form values
@@ -55,7 +60,7 @@
               success: function (response) {
                   closeLoadingModal();
                  // $("#content-main").html(response);
-                  addTabMain(icon,tabName,response);
+                  addTabMain(icon,tabName,response,menuId);
               },
               error: function (e) {
                   closeLoadingModal();
@@ -84,8 +89,8 @@
               <c:forEach var="listSub1Value" items="${listValue.menuList}">
                 <li class="treeview">
                   <%--<a href="${listSub1Value.menu.action}">--%>
-                   <%-- <a href="#" onclick="reloadPageAjaxTab('<c:url value='${listSub1Value.menu.action}'/>','${listSub1Value.menu.id}','${listSub1Value.menu.images}','${listSub1Value.menu.name}');">--%>
-                    <a href="#" onclick="reloadPageAjax('<c:url value='${listSub1Value.menu.action}'/>','${listSub1Value.menu.id}');">
+                    <a href="#" onclick="reloadPageAjaxTab('<c:url value='${listSub1Value.menu.action}'/>','${listSub1Value.menu.id}','${listSub1Value.menu.images}','${listSub1Value.menu.name}');">
+                    <%--<a href="#" onclick="reloadPageAjax('<c:url value='${listSub1Value.menu.action}'/>','${listSub1Value.menu.id}');">--%>
                     <i class="fa ${listSub1Value.menu.images}"></i>
                     <span>${listSub1Value.menu.name}</span>
 
@@ -98,10 +103,10 @@
                     <ul class="treeview-menu">
                         <c:forEach var="listSub2Value" items="${listSub1Value.menuList}">
                           <li>
-                             <a href="#" onclick="reloadPageAjax('<c:url value='${listSub2Value.menu.action}'/>','${listSub2Value.menu.id}');">
-                           <%--  <a href="#" onclick="reloadPageAjaxTab('<c:url value='${listSub2Value.menu.action}'/>','${listSub2Value.menu.id}','${listSub2Value.menu.images}','${listSub2Value.menu.name}');">--%>
+                              <a href="#" onclick="reloadPageAjaxTab('<c:url value='${listSub2Value.menu.action}'/>','${listSub2Value.menu.id}','${listSub2Value.menu.images}','${listSub2Value.menu.name}');">
+                             <%--<a href="#" onclick="reloadPageAjax('<c:url value='${listSub2Value.menu.action}'/>','${listSub2Value.menu.id}');">--%>
                              <i class="fa ${listSub2Value.menu.images}"></i> ${listSub2Value.menu.name}
-                            </a>
+                             </a>
                           </li>
                         </c:forEach>
                     </ul>
