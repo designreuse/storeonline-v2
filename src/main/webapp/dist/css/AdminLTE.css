@@ -2217,13 +2217,13 @@ a:focus {
   background-color: #e7e7e7;
 }
 .btn-primary {
-  background-color: #3c8dbc;
-  border-color: #367fa9;
+  background-color: #50A4EA;
+  border-color: #4f9dea;
 }
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary.hover {
-  background-color: #367fa9;
+  background-color: #4fa2e7;
 }
 .btn-success {
   background-color: #00a65a;
@@ -2449,9 +2449,9 @@ a:focus {
 /* NAV TABS */
 .nav-tabs-custom {
   margin-bottom: 20px;
-  background: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
+  background: #ecf0f5;
+  /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;*/
 }
 .nav-tabs-custom > .nav-tabs {
   margin: 0;
@@ -2531,8 +2531,8 @@ a:focus {
   margin-right: 5px;
 }
 .nav-tabs-custom > .tab-content {
-  background: #fff;
-  padding: 10px;
+  background: #ecf0f5;
+  padding-top: 5px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
