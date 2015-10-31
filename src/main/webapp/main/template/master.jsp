@@ -33,7 +33,7 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="<c:url value='/dist/css/skins/_all-skins.min.css'  />" rel="stylesheet" type="text/css" />
 
-      <link href="<c:url value='/dist/css/buttom_store_online.css'  />" rel="stylesheet" type="text/css" />
+      <%--<link href="<c:url value='/dist/css/buttom_store_online.css'  />" rel="stylesheet" type="text/css" />--%>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -386,23 +386,31 @@
 
     var pageImages = [];
     var pageNum = 0;
+    var countTab = 0;
+
     // Reset numbering on tab buttons
+//    function reNumberPages() {
+//        pageNum = 0;
+//        var tabCount = $('#pageTab > li').length;
+//
+//        $('#pageTab > li').each(function() {
+//            var pageId = $(this).children('a').attr('href');
+////            if (pageId == "#page1") {
+////                return true;
+////            }
+//            pageNum++;
+//            $(this).children('a').html('Page ' + pageNum + '<button class="close" type="button" ' + 'title="Remove this page">×</button>');
+//        });
+//        checkShowContent();
+//    }
+
     function reNumberPages() {
-        pageNum = 0;
-        var tabCount = $('#pageTab > li').length;
-        $('#pageTab > li').each(function() {
-            var pageId = $(this).children('a').attr('href')
-//            if (pageId == "#page1") {
-//                return true;
-//            }
-            pageNum++;
-            //$(this).children('a').html('Page ' + pageNum + '<button class="close" type="button" ' + 'title="Remove this page">×</button>');
-        });
+        countTab--;
         checkShowContent();
     }
 
     function checkShowContent(){
-        if(pageNum > 0){
+        if(countTab > 0){
             $('#content-home').hide();
             $('#tabMain').show();
         }else{
@@ -412,7 +420,9 @@
     }
 
     function addTabMain(icon,tabName,tabContent,menuId){
+
         pageNum++;
+        countTab++;
         checkShowContent();
 
         var icontag = '<i class="fa ' + icon +'  " id="icon_'+menuId+'_menu">';
@@ -437,8 +447,7 @@
     }
 
     $(document).ready(function() {
-        reNumberPages();
-
+        checkShowContent();
         // Remove a Tab //
         $('#pageTab').on('click', ' li a .close-tab', function() {
             var tabId = $(this).parents('li').children('a').attr('href');

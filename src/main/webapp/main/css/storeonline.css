@@ -22,6 +22,7 @@
 
 /*DATATABLE*/
 /*blue theme*/
+/*
 tr.odd {
     background-color:  #f2fbff;
 }
@@ -29,21 +30,22 @@ tr.odd {
 tr.even{
     background-color: #f2fbff;
 }
+*/
 
 
 th.sorting_asc {
     color: #fff;
-    background-color: #50A4EA;
+    background-color: #3c8dbc;
 }
 
 th.sorting , th.sorting_disabled {
     color: #fff;
-    background-color: #50A4EA;
+    background-color: #3c8dbc;
 }
 
 th.sorting_desc {
     color: #fff;
-    background-color: #50A4EA;
+    background-color: #3c8dbc;
 }
 
 
@@ -98,3 +100,7 @@ th.sorting_desc {
 .datepicker{z-index:1151 !important;}
 
 .numberFormat,.currencyFormat{text-align: right;}
+
+.nav>li>a {
+    padding: 5px 10px;
+}

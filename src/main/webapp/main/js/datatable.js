@@ -3,6 +3,7 @@
  */
 function setDatatable(id){
     $('#'+id).dataTable({
+        "sAjaxSource" :"/main/user/datatable",
         "bPaginate": true,
         "bLengthChange": true,
         "bFilter": true,
@@ -26,8 +27,21 @@ function setDatatable(id){
                 "sNext":     "ถัดไป",
                 "sLast":     "สุดท้าย"
             }
-        }
+        },
+        "columnDefs": [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
+        "order": [[ 1, 'asc' ]]
     });
+
+    var datatableShow = $('#'+id+'').DataTable();
+    datatableShow.on( 'order.dt search.dt', function () {
+        datatableShow.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
 }
 
 function searchDatatableByInput(datatable,colId,value){

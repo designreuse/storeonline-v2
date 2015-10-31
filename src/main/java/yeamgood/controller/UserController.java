@@ -61,5 +61,37 @@ public class UserController {
         alertMessage.deleteSuccess();
         return alertMessage;
     }
+
+
+   /* @RequestMapping(value = "/users2", produces = "application/json")
+    public @ResponseBody String showUser(@RequestParam int iDisplayStart,@RequestParam int iDisplayLength, @RequestParam int sEcho) {
+        String method="showUser";
+        info(method,"para0---"+iDisplayStart);
+        info(method,"para1---"+iDisplayLength);
+        info(method,"para2---"+sEcho);
+        DataTablesTO<Account> dt = new DataTablesTO<Account>();
+
+        List<Account> accts = accountService.getAccounts(iDisplayStart,iDisplayLength);
+        List<Account> accts2 = accountService.getAccounts();
+        dt.setAaData(accts);  // this is the dataset reponse to client
+        dt.setiTotalDisplayRecords(accts2.size());  // // the total data in db for datatables to calculate page no. and position
+        dt.setiTotalRecords(accts2.size());   // the total data in db for datatables to calculate page no.
+        dt.setsEcho(sEcho);
+
+        return toJson(dt);
+    }
+
+
+    private String toJson(DataTablesTO<?> dt){
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            return mapper.writeValueAsString(dt);
+        } catch (JsonProcessingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }*/
+
 }
 

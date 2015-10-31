@@ -18,7 +18,7 @@
 
         <div class="col-md-3">
 
-            <a href="javascript:$('#manageModal .modal-body').load('<c:url value="/main/menu/manage"/>',function(e){$('#menuManageModal').modal('show');});"
+            <a href="javascript:$('#menuManageModal .modal-body').load('<c:url value="/main/menu/manage"/>',function(e){$('#menuManageModal').modal('show');});"
                class="btn btn-primary btn-block margin-bottom">เพิ่มข้อมูลเมนู
             </a>
 
@@ -84,6 +84,7 @@
                             <table id="menuMainDatatable" class="table table-bordered table-hover dataTable" role="grid" >
                                 <thead>
                                 <tr role="row">
+                                    <th>No.</th>
                                     <th class="sorting" ><spring:message code="menu.id"/></th>
                                     <th class="sorting" ><spring:message code="menu.name"/></th>
                                     <%--<th class="sorting" >description</th>--%>
@@ -101,6 +102,7 @@
                                 <c:if test="${not empty menuList}">
                                     <c:forEach var="listObject" items="${menuList}">
                                         <tr role="row" class="odd">
+                                            <td></td>
                                             <td>${listObject.id}</td>
                                             <td>${listObject.name}</td>
                                             <%--<td>${listObject.description}</td>--%>
@@ -112,11 +114,11 @@
                                             <%--<td>${listObject.active}</td>--%>
                                             <td align="center">
                                                 <button type="submit" class="btn btn-success btn-xs" data-toggle="tooltip" title="" data-original-title="add"
-                                                        onclick="javascript:$('#manageModal .modal-body').load('<c:url value="/main/menu/manage/?id=${listObject.id}&action=add"/>',function(e){$('#manageModal').modal('show');});" >
+                                                        onclick="javascript:$('#menuManageModal .modal-body').load('<c:url value="/main/menu/manage/?id=${listObject.id}&action=add"/>',function(e){$('#menuManageModal').modal('show');});" >
                                                     <i class="fa fa-plus"></i>
                                                 </button>
                                                 <button type="submit" class="btn btn-warning btn-xs" data-toggle="tooltip" title="" data-original-title="edit"
-                                                        onclick="javascript:$('#manageModal .modal-body').load('<c:url value="/main/menu/manage/?id=${listObject.id}"/>',function(e){$('#manageModal').modal('show');});" >
+                                                        onclick="javascript:$('#menuManageModal .modal-body').load('<c:url value="/main/menu/manage/?id=${listObject.id}"/>',function(e){$('#menuManageModal').modal('show');});" >
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button type="submit" class="btn btn-danger btn-xs"  data-toggle="tooltip" title="" data-original-title="delete" onclick="manageDelete(${listObject.id},'menu');"> <i class="fa fa-trash"></i></button>

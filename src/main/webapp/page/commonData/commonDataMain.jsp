@@ -66,7 +66,7 @@
                 <div class="box-body">
                     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                         <div class="row"><div class="col-sm-12">
-                            <table id="mainDataTable" class="table table-bordered table-hover dataTable" role="grid" >
+                            <table id="commonDataMainDatatable" class="table table-bordered table-hover dataTable" role="grid" >
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting" >code</th>
@@ -129,6 +129,40 @@
     </div>
 </section>
 
+<%--
 <%@include file="/main/include/headerJavascript.jsp" %>
+
+
+
+--%>
+
+<%-- -------------------------------------------------------------------------------------------------------- --%>
+<%-- ---------------------------------------   JAVASCRIPT   ------------------------------------------------- --%>
+<%-- -------------------------------------------------------------------------------------------------------- --%>
+
+<script src="<c:url value='/main/js/editBug.js'/>"></script>
+
+<script src="<c:url value='/main/js/datatable.js'/>"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var datatableID = "commonDataMainDatatable";
+
+        $(function () {
+            setDatatable(datatableID);
+        });
+
+        $('[id^="input_criteria_"]').on( 'keyup', function () {
+            var colId = this.id.split("_").pop();
+            searchDatatableByInput(datatableID,colId,this.value);
+        } );
+
+        $('[id^="select_criteria_"]').on( 'change', function () {
+            var colId = this.id.split("_").pop();
+            searchDatatableByInput(datatableID,colId,this.value);
+        } );
+    } );
+</script>
+
 
 
